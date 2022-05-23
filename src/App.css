@@ -1,0 +1,127 @@
+/* COLOR DATA */
+:root {
+  /* dark */
+  --d0: #1d1f24;
+  --d1: #23272e;
+  --d2: #282c34;
+  --d3: #303541;
+  --d3l: #3b4458;
+  --d4: #373c47;
+  --d5: #5a5e66;
+  /* light */
+  --l0: #aaaaaa;
+  --l1: #dddddd;
+  --l2: #dadada;
+  --l3: #f5f5f5;
+  --l4: #e6e6e6;
+  --hei: #d8a424;
+  /* ONE DARK PRO highlight */
+  --kw: #c678dd;
+  --warn: rgb(207, 55, 55); 
+  --var: #e06c75;
+  --oper: #56b6c2;
+  --fn: #61afef;
+  --num: #d19a66;
+  --obj: #e5c07b;
+  --str: #98c379;
+  --symb: #abb2bf;
+}
+
+/* ---------------------------------------------------------------------------------
+ BASIC ELEMENT STYLE
+-------------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+}
+body {
+  height: 100vh;
+}
+
+/* ---------------------------------------------------------------------------------
+ LAYOUT
+-------------------------------------------------------------------------------- */
+.App {
+  height: 100vh;
+}
+
+.App .col {
+  height: 100%;
+  float: left;
+}
+
+.runBtn {
+  z-index: 99999999999999999999;
+  cursor: pointer;
+  padding: 2%;
+  border-radius: 5px;
+  border: 1px solid rgb(0, 0, 0, 0.1);
+}
+.runBtn:hover {
+  border-color: #ababab;
+}
+.runBtn:active {
+  background-color: #d2d2d2;
+}
+
+.outputForm {
+  color: rgb(0, 0, 0, 0.7);
+  margin-top: 50vh;
+  background-color: rgb(190, 190, 190, 0.2);
+  border: 1px solid rgb(0, 0, 0, 0.1);
+  border-radius: 5px;
+  padding: 3%;
+}
+
+aside {
+  border-right: -2px solid var(--d2);
+  background-color: var(--l2);
+  width: 30%;
+  position: relative;
+}
+aside div {
+  font-size: 30px;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: var(--d3);
+}
+aside h4 { font-family: Arial, Helvetica, sans-serif }
+h4 span { color: var(--hei) }
+.rot { animation: rotate 1s infinite }
+
+
+@keyframes rotate {
+  from { transform: rotate(0deg) }
+  to { transform: rotate(360deg) }
+}
+
+/* ---------------------------------------------------------------------------------
+ EDITOR
+-------------------------------------------------------------------------------- */
+main {
+  border-left: -2px solid var(--d2);
+  width: 70%;
+  height: 100vh;
+  padding-block: 4% 2%;
+  box-sizing: border-box;
+  background-color: var(--d1);
+}
+/* body */
+main .Editor {
+  background-color: var(--d1);
+  width: 100%;
+  height: 100%;
+}
+/* ---------------------------------------------------------------------------------
+ MEDIA QUERIES
+-------------------------------------------------------------------------------- */
+@media screen and (max-width: 1200px) {
+  aside {
+      display: none;
+  }
+  main {
+      width: 100%;
+  }
+}
